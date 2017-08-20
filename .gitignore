@@ -1,3 +1,8 @@
+.vscode/
+
+# Do not commit settings.cfg because it could have private configurations
+web-app/src/settings.cfg
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  web:
+    build: ./web-app/.
+    image: connect-steam-openid:1.0.0
+    ports:
+      - 5000:5000

@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    <head>
+      <title>Steam Connect with OpenID</title>
+    </head>
+    <body>
+        {% if user is not none %}
+          <h1>Hello, {{ user.nickname }}!</h1>
+          <p>Your id steam is <strong>{{user.id}}!</strong></p>
+
+          <h2>Full steam json response</h2>
+          <code>
+              {{ session['LOGGED_USER'] }}!
+          <code>
+
+        {% else %}
+          <a href="{{ url_for('login') }}">Login Steam</a>
+        {% endif %}
+    </body>
+  </html>
