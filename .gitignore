@@ -1,4 +1,5 @@
 .vscode/
+.DS_Store
 
 # Do not commit settings.cfg because it could have private configurations
 web-app/src/settings.cfg
