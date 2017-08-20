@@ -7,10 +7,12 @@
         {% if user is not none %}
           <h1>Hello, {{ user.nickname }}!</h1>
           <p>Your id steam is <strong>{{user.id}}!</strong></p>
+          <p>Your email is <strong>{{ session['email'] }}</strong></p>
+
 
           <h2>Full steam json response</h2>
           <code>
-              {{ session['LOGGED_USER'] }}!
+              {{ session['LOGGED_USER'] }}
           <code>
 
         {% else %}

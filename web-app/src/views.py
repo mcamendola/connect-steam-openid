@@ -12,10 +12,12 @@ def index():
 def login():
     if g.user is not None:
         return redirect(url_for('/'))
-    return oid.try_login(app.config['STEAM_OPEN_ID_URL'])
+    return oid.try_login(app.config['STEAM_OPEN_ID_URL'], ask_for=['email'])
 
 @oid.after_login
 def after_login(resp):
+    session['email'] = resp.email
+
     user_steam_id = helpers.get_steam_id_from_identity_url(resp.identity_url)
     user_steam_data = steam_api_service.get_user_steam_data(user_steam_id)
     user = helpers.convert_steam_data_to_user(user_steam_data)
